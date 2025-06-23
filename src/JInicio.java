@@ -50,9 +50,19 @@ public class JInicio extends javax.swing.JFrame {
         jMenu1.add(jCategoria);
 
         jProdutos.setText("Produtos");
+        jProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jProdutosActionPerformed(evt);
+            }
+        });
         jMenu1.add(jProdutos);
 
         jFornecedores.setText("Fornecedores");
+        jFornecedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFornecedoresActionPerformed(evt);
+            }
+        });
         jMenu1.add(jFornecedores);
 
         jClientes.setText("Clientes");
@@ -85,12 +95,28 @@ public class JInicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCategoriaActionPerformed
-        // TODO add your handling code here:
+        JCategoria cat = new JCategoria();
+        
+        cat.show();
     }//GEN-LAST:event_jCategoriaActionPerformed
 
     private void jClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jClientesActionPerformed
-        // TODO add your handling code here:
+        JCliente cli = new JCliente();
+        
+        cli.show();
     }//GEN-LAST:event_jClientesActionPerformed
+
+    private void jProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jProdutosActionPerformed
+        JProduto prod = new JProduto();
+        
+        prod.show();
+    }//GEN-LAST:event_jProdutosActionPerformed
+
+    private void jFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFornecedoresActionPerformed
+        JFornecedor forn = new JFornecedor();
+        
+        forn.show();
+    }//GEN-LAST:event_jFornecedoresActionPerformed
 
     /**
      * @param args the command line arguments

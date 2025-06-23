@@ -3,7 +3,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 /**
  *
@@ -29,7 +31,7 @@ public class CategoriasDAO {
             System.out.println("Erro ao inserir pessoa: " + ex.getMessage());
         }
     }  
-    public Categorias getidCategoria(int id){
+   /* public Categorias getidCategoria(int id){
         String sql = "SELECT * FROM pessoa WHERE id = ?";
         try {
             PreparedStatement stmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -43,6 +45,27 @@ public class CategoriasDAO {
             return c;
         }
         catch (SQLException ex){
+            System.out.println("Erro ao consultar categorias: " + ex.getMessage());
+            return null;
+        }
+        
+    }*/
+    public List<Categorias> getCategorias(){
+        String sql = "SELECT * FROM categorias ";
+        try{
+            PreparedStatement stmt = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            //stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            List<Categorias> listaCategorias = new ArrayList();
+            while(rs.next()){
+               Categorias c = new Categorias(); 
+               c.setIdCategoria(rs.getInt("cat_idCategorias"));
+               c.setNome(rs.getString("cat_nome"));
+               c.setDescricao(rs.getString("cat_descricao"));
+               listaCategorias.add(c);
+            }
+            return listaCategorias;
+        } catch(SQLException ex){
             System.out.println("Erro ao consultar categorias: " + ex.getMessage());
             return null;
         }

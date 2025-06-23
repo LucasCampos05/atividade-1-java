@@ -17,7 +17,7 @@ public class ClientesDAO {
         this.conn = this.conexao.getConexao();
     }
     public void inserir(Clientes clientes){
-        String sql = "INSERT INTO cliente (cli_CPF, cli_nome, cli_email) VALUES (?,?,?);";
+        String sql = "INSERT INTO clientes (cli_CPF, cli_nome, cli_email) VALUES (?,?,?);";
         try{
             PreparedStatement stmt = this.conn.prepareStatement(sql);
             stmt.setString(1, clientes.getCPF());

@@ -50,7 +50,7 @@ public class ProdutosDAO {
     }
     public void editar(Produtos produtos){
         try{
-            String sql = "UPDATE pessoa set nome=?, sexo=?, idioma=? WHERE pro_codigoBarra=?";
+            String sql = "UPDATE produtos set pro_codigoBarra=?, pro_nome=?, pro_preco=? WHERE pro_codigoBarra=?";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, produtos.getCodigoBarra());
             stmt.setString(2, produtos.getNome());
