@@ -5,14 +5,18 @@
         <group name="AulasDeJava">
             <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/conexao.java</file>
             <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/CategoriasDAO.java</file>
-            <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/FornecedoresDAO.java</file>
-            <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/ClientesDAO.java</file>
-            <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/Categorias.java</file>
             <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/Fornecedores.java</file>
-            <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/Clientes.java</file>
-            <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/Produtos.java</file>
             <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/JInicio.java</file>
             <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/ProdutosDAO.java</file>
+            <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/JCliente.java</file>
+            <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/JFornecedor.java</file>
+            <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/FornecedoresDAO.java</file>
+            <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/ClientesDAO.java</file>
+            <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/JCategoria.java</file>
+            <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/Categorias.java</file>
+            <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/Clientes.java</file>
+            <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/JProduto.java</file>
+            <file>file:/C:/Users/2830482321024/Documents/RepositorioTermoLucasC/AulasDeJava/AtividadeJava1/src/Produtos.java</file>
         </group>
     </open-files>
 </project-private>
