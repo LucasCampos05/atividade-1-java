@@ -33,13 +33,14 @@ public class JInicio extends javax.swing.JFrame {
         jProdutos = new javax.swing.JMenuItem();
         jFornecedores = new javax.swing.JMenuItem();
         jClientes = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         jMenuItem4.setText("jMenuItem4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("File");
+        jMenu1.setText("Cadastrar");
 
         jCategoria.setText("Categorias");
         jCategoria.addActionListener(new java.awt.event.ActionListener() {
@@ -72,6 +73,14 @@ public class JInicio extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jClientes);
+
+        jMenuItem1.setText("Nota");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
 
@@ -118,6 +127,12 @@ public class JInicio extends javax.swing.JFrame {
         forn.show();
     }//GEN-LAST:event_jFornecedoresActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        JNotaCabecalho nota = new JNotaCabecalho();
+        
+        nota.show();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -160,6 +175,7 @@ public class JInicio extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jProdutos;
     // End of variables declaration//GEN-END:variables

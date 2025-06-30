@@ -1,3 +1,9 @@
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,7 +15,7 @@
  * @author 2830482321024
  */
 public class JNotaCabecalho extends javax.swing.JFrame {
-
+    private Connection conn;
     /**
      * Creates new form JNotaCabecalho
      */
@@ -33,6 +39,11 @@ public class JNotaCabecalho extends javax.swing.JFrame {
         jTextValorTotal = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jTextValorQuantidade = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextValorValorUnitario = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,7 +54,7 @@ public class JNotaCabecalho extends javax.swing.JFrame {
         jLabel2.setText("Valor Total:");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 32)); // NOI18N
-        jLabel3.setText("Nota Cabeçalho");
+        jLabel3.setText("Nota");
 
         jTextData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,49 +76,79 @@ public class JNotaCabecalho extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel4.setText("Quantidade:");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel5.setText("Valor unitario:");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel6.setText("Produto:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(23, 23, 23))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
+                        .addGap(197, 197, 197)
                         .addComponent(jLabel3))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(115, 115, 115)
-                            .addComponent(jButton2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(31, 31, 31)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextValorQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextValorValorUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addComponent(jLabel2))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextData, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(39, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addComponent(jTextData, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel6)))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel3)
-                .addGap(85, 85, 85)
+                .addGap(40, 40, 40)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jTextData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTextValorTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(74, 74, 74)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextValorQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextValorValorUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
 
         pack();
@@ -122,15 +163,46 @@ public class JNotaCabecalho extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        NotaCabecalho notac = new NotaCabecalho();
-        notac.setData(jTextData.getText());
-        notac.setValorTotal(Double.parseDouble(jTextValorTotal.getText()));               
-        //notac.setPreco(Float.parseFloat(jTextPreco.getText()));
-
-        prod.setIdCategoria(((Categorias)jComboCategoria.getSelectedItem()).getIdCategoria());
+        NotaCabecalho nota = new NotaCabecalho();
+        nota.setData(jTextData.getText());
+        nota.setValorTotal(Double.parseDouble(jTextValorTotal.getText()));            
+       
+        NotacabecalhoDAO notaDAO = new NotacabecalhoDAO();
+        notaDAO.inserir(nota);
         
-        ProdutosDAO prodDAO = new ProdutosDAO();
-        prodDAO.inserir(prod);
+        //consultar      
+
+        Nota_itens not = new Nota_itens();
+        not.setQuantidade(Integer.parseInt(jTextValorQuantidade.getText()));
+        not.setValorUnitario(Double.parseDouble(jTextValorValorUnitario.getText()));
+        String pgId = "select max(NOT_ID) from notacabecalho";
+        
+        int idNota = 0;
+        try {
+        PreparedStatement stmt = conn.prepareStatement(pgId);
+        ResultSet rs = stmt.executeQuery();
+    
+        if (rs.next()) {
+        idNota = rs.getInt("max_id");
+        }
+    
+    rs.close();
+    stmt.close();
+} catch (SQLException ex) {
+    System.out.println("Erro ao obter not_id: " + ex.getMessage());
+}
+        
+        not.setFkId(Integer.parseInt(pgId));
+
+        //Produtos produtoSelecionado = (Produtos) jComboProduto.getSelectedItem();
+        //not.setCodigoBarra(produtoSelecionado.getCodigoBarra());
+        
+        //not.setCodigoBarra(((Produtos)jComboProduto.getSelectedItem()).getCodigoBarra());
+
+        Nota_itensDAO itensDAO = new Nota_itensDAO();
+        itensDAO.inserir(not);       
+              
+        
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -175,7 +247,12 @@ public class JNotaCabecalho extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField jTextData;
+    private javax.swing.JTextField jTextValorQuantidade;
     private javax.swing.JTextField jTextValorTotal;
+    private javax.swing.JTextField jTextValorValorUnitario;
     // End of variables declaration//GEN-END:variables
 }
